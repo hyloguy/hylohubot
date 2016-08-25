@@ -15,4 +15,22 @@ module.exports = function(robot) {
   robot.hear(/ship it/i, function(msg) {
     return msg.send(msg.random(squirrels));
   });
+  robot.respond(/open the (.*) doors/i, function(res) {
+    var doortype = res.match[1];
+    if (doortype === "pod bay") {
+      res.reply("I'm afraid I can't let you do that.");
+    } else {
+      res.reply("Opening #{doortype} doors.");
+    }
+  });
 }
+
+  // # robot.hear /badger/i, (res) ->
+  // #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+  // #
+  // # robot.respond /open the (.*) doors/i, (res) ->
+  // #   doorType = res.match[1]
+  // #   if doorType is "pod bay"
+  // #     res.reply "I'm afraid I can't let you do that."
+  // #   else
+  // #     res.reply "Opening #{doorType} doors"
