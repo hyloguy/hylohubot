@@ -20,7 +20,7 @@ module.exports = function(robot) {
     if (doortype === "pod bay") {
       res.reply("I'm afraid I can't let you do that.");
     } else {
-      res.reply(`Opening ${doortype} doors.`);
+      res.reply("Opening ${doortype} doors.");
     }
   });
 }
