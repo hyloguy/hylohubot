@@ -1,4 +1,5 @@
 # This is hylohubot.
+# Developed by Sahar Jafari and Michael Rubinstein
 
 Whenever the robot enters a room it will send a random message to let you know it knows you are there.
 
