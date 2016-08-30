@@ -10,9 +10,13 @@ module.exports = function(robot) {
   robot.respond(/hi|hello/i, function(res) {
     return res.send("Greetings, presumed Human.");
   });
+
+  // Example of using the .random method
   robot.respond(/ship it/i, function(res) {
     return res.send(res.random(squirrels));
   });
+
+  // Example of using a conditional to change the output
   robot.respond(/open the (.*) doors/i, function(res) {
     var doortype = res.match[1];
     if (doortype === "pod bay") {
