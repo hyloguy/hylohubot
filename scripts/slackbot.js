@@ -7,7 +7,7 @@ module.exports = function(robot) {
   // Say hi or hello to the bot and get a response with a picture
   robot.respond(/hi|hello/i, function(msg) {
     var img = 'http://www.imagefully.com/wp-content/uploads/2015/07/Hello-Black-Font-Image.png';
-    return msg.send("Hello you human, you!" + img);
+    return msg.send("Hello you human, you! " + img);
   });
 
   // Say "Ship it" to get a random image
