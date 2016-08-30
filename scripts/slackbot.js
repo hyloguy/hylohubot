@@ -25,5 +25,33 @@ module.exports = function(robot) {
       res.reply("Opening " + doortype + " doors.");
     }
   });
+
+  var enterReplies = ['Hi', 'Hello there!', 'Oh! Hi!', 'Hello friend.', 'I see you'];
+
+  robot.hear(/My name is (.*)/i, function(msg) {
+    var res = msg.match[1];
+    return msg.send('It is nice to meet you ' + res);
+  });
+
+  robot.respond(/hi|hello/i, function(msg) {
+    var img = 'http://www.imagefully.com/wp-content/uploads/2015/07/Hello-Black-Font-Image.png';
+    return msg.send("Hello you! " + img);
+  });
+
+  robot.enter(function(msg) {
+    var random = Math.floor(Math.random() * 6);
+    return msg.send(msg.random(enterReplies));
+  });
+
+  robot.respond(/It is (.*)/i, function(msg) {
+    var res = msg.match[1];
+    if(res === 'cold') {
+      return msg.reply('Make Sure you have a jacket in this ' + res + ' day.');
+    }
+    if (res === 'rainy') {
+      return msg.reply('You probabely need an umbrella for a ' + res + ' day.');
+    }
+    return msg.reply('I hope you have a wonderful ' + res + ' day.');
+  });
 }
 
